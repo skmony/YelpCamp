@@ -1,0 +1,21 @@
+#size{
+    height: 250px;
+    width: 250px;
+}
+
+.thumbnail img{
+    width: 100%;
+}
+.thumbnail{
+    padding: 0;
+}
+.delete-form{
+    display: inline;
+}
+.jumbotron{
+ background-image: url(https://images.unsplash.com/photo-1486679679458-629f321a617c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce0cc0245473e7cb6f7a765e181e8a1c&auto=format&fit=crop&w=600&q=60);
+  background-position:   100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
