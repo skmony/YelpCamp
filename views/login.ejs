@@ -1,21 +1,22 @@
 <%include ./partials/header%>
 <div class="row">
-    <h1 style="text-align: center">Login</h1>
-    <div style="width: 30%; margin: 25px auto;">
-        <form action="/login" method="post">
-            <div class="form-group">
-                <input class="form-control" type="text" name="username" placeholder="username">
+    <div class="col-md-12 col-xs-12 col-log-4">
+    <form class="form-signin" action="/login" method="post">
+      <h1 class="h3 mb-3 ">Login</h1>     
+      <div class="form-group">
+                <input  class="form-control" type="text" name="username" placeholder="username" >
             </div>
+            
             <div class="form-group">
-                <input class="form-control" type="password" name="password" placeholder="password">
-            </div>
-            <div class="form-group">
-                <button class="btn btn-lg btn-primary btn-block">Login</button>
-            </div>
-        </form>
-        <p>New to YelCamp?    <a href="/register">Sign Up</a></p>
+                <input id="password"class="form-control" type="password" name="password" placeholder="password" >
+            </div> 
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    <div class="form-signin">
+        <p>New to YelpCamp?    <a href="/register">Sign Up</a></p>
         <p>Forgot Password?     <a href="/forgot">Recover</a></p>
         <p><a href="/campgrounds">Go Back</a></p>
+    </div>  
     </div>
 </div>
 <%include ./partials/footer%>

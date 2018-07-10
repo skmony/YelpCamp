@@ -4,40 +4,46 @@
         <!-- Make site responsive on mobile/tablet -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <TITLE>YelpCamp</TITLE>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link rel="stylesheet" href="/stylesheets/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" >
     </HEAD>
     <BODY>
-       <nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="/">YelpCamp</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds"><i class="fas fa-map-marked-alt"></i> Discover</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="/">YelpCamp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li  class="nav-item <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>">
+                <a href="/campgrounds" class="nav-link"><i class="fas fa-map-marked-alt"></i> Discover</a>
+            </li>
+        </ul>
+        <ul class=" navbar-nav ">
               <% if(!currentUser){ %>
-                  <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login">Login  <i class="fas fa-sign-in-alt"></i></a></li>
-                  <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register">Sign Up  <i class="fas fa-user-plus"></i></a></li>
+                  <li class="nav-item<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+                      <a href="/login" class="nav-link">Login  <i class="fas fa-sign-in-alt"></i></a>
+                  </li>
+                  <li class="nav-item<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>">
+                      <a href="/register" class="nav-link">Sign Up  <i class="fas fa-user-plus"></i></a>
+                  </li>
               <% } else { %>
-                  <li><a href="/users/<%= currentUser.id %>">Profile</a></li>     
-                  <li><a href="#"><i class="fas fa-user-alt"></i>  <%= currentUser.username %></a></li>
-                  <li><a href="/logout">Logout  <i class="fas fa-sign-out-alt"></i></i></a></li>
+                  <li class="nav-item">
+                      <a href="/users/<%= currentUser.id %>" class="nav-link">Profile</a></li>     
+                  <li class="nav-item">
+                      <a href="#"class="nav-link"><i class="fas fa-user-alt"></i>  <%= currentUser.username %></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/logout" class="nav-link">Logout  <i class="fas fa-sign-out-alt"></i></i></a>
+                  </li>
               <% } %>
           </ul>
-        </div>
-    </div>
-</nav>
+      </div>
+    </nav>
+    
+    
+    
 <div class="container">
    <%if(error && error.length>0){%>        
    <div class="alert alert-danger" role="alert">
